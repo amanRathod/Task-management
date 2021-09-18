@@ -15,7 +15,3 @@ const PublicRoute = ({ component: Component, ...rest }) => {
   );
 };
 export default PublicRoute;
-
-// PublicRoute.propTypes = {
-//   component: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-// };

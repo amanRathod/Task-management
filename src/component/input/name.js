@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function FormInputEmail({ value, handleChange }) {
+export default function FormInputFullName({ value, handleChange }) {
   return (
     <input
-      type="text"
-      name="email"
+      type="name"
+      name="fullName"
       value={value}
       className="form-control"
       onChange={handleChange}
@@ -14,7 +14,7 @@ export default function FormInputEmail({ value, handleChange }) {
   );
 }
 
-FormInputEmail.propTypes = {
+FormInputFullName.propTypes = {
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };

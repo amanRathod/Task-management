@@ -11,7 +11,7 @@ html {
   box-sizing: border-box;
   background: #eeeeee;
   font-family: "helvetica neue";
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 200;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -32,46 +32,87 @@ strong {
   font-weight: bold;
 }
 
+p {
+  font-size: large;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
+.error {
+  color: #e74c3c;
+}
+
 .flex-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 10%;
 }
 
 .flex-coloumn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 5%;
+  padding-bottom: 5px;
 }
 
-.box {
-  width: 200px;
+
+.container {
+  width: 100%;
   height: auto;
-  border-radius: 4rem;
-  box-shadow: #cac5c0 0 0 0 1px;
-  background: #f9fafb;
+  border-radius: 1rem;
+  border: 1px solid #121212;
+  box-shadow: --var(gray-300) 0 0 0 1px;
+  background: --var(gray-50);
   margin: 0 auto;
-  padding: 0;
-  text-align: center;
+  padding: 5%;
+  /* text-align: center; */
   font-size: 1.5rem;
 }
 
 .form-control {
-  width: 100%;
-  height: 3rem;
+  width: 90%;
+  height: 2.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #cac5c0;
+  border: 1px solid --var(gray-300);
   border-radius: 4rem;
-  box-shadow: #cac5c0 0 0 0 1px;
-  background: #f9fafb;
+  box-shadow: --var(gray-300) 0 0 0 1px;
+  background: --var(gray-50);
   font-size: 1.5rem;
-  color: #cac5c0;
+  color: --var(gray-300);
+  outline: none;
+  font-weight: 200;
+}
+
+label {
+  display: block;
+  margin-bottom: 0px;
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-align: start;
+}
+
+.button {
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.btn {
+  width: 90%;
+  height: auto;
+  border-radius: 1rem;
+  border: 1px solid --var(gray-300);
+  box-shadow: --var(gray-300) 0 0 0 1px;
+  background: --var(gray-50);
+  font-size: 1.5rem;
+  color: --var(gray-300);
   outline: none;
   font-weight: 200;
   text-align: center;
