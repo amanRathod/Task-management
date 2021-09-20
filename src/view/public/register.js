@@ -3,6 +3,8 @@
 
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as ROUTES from '../../constants/routes';
 import FirebaseContext from '../../utils/context/firebase';
 import FormInputEmail from '../../component/input/email';
@@ -11,6 +13,7 @@ import FormInputPassword from '../../component/input/password';
 import ValidateEmail from '../../utils/validation/email';
 import ValidatePassword from '../../utils/validation/password';
 import ValidateConfirmPassword from '../../utils/validation/confirmPassword';
+import notify from '../../component/public/notification';
 
 const Register = () => {
   const history = useHistory();
@@ -60,16 +63,27 @@ const Register = () => {
         .auth()
         .createUserWithEmailAndPassword(state.email, state.password);
 
+      await createdUserResult.user.updateProfile({
+        displayName: state.fullName
+      });
+      notify({
+        type: 'success',
+        message: 'Registered successfully'
+      });
       await firebase.firestore().collection('users').add({
         userId: createdUserResult.user.uid,
         fullName: state.fullName,
         email: state.email.toLowerCase(),
         dateCreated: Date.now()
       });
-
-      history.push(ROUTES.LOGIN);
+      setTimeout(() => {
+        history.push(ROUTES.LOGIN);
+      }, 1000);
     } catch (err) {
-      console.log(err);
+      notify({
+        type: 'error',
+        message: err.message
+      });
     }
   };
   useEffect(() => {
@@ -78,7 +92,8 @@ const Register = () => {
 
   return (
     <div className="flex-row">
-      <div className="flex-column container">
+      <ToastContainer />
+      <div className="flex-column box">
         <form onSubmit={handleSubmit}>
           <div>
             <div>

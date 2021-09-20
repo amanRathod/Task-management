@@ -36,6 +36,10 @@ p {
   font-size: large;
 }
 
+h3 {
+  padding-right: 10px;
+}
+
 *,
 *:before,
 *:after {
@@ -63,30 +67,15 @@ p {
   padding-bottom: 5px;
 }
 
-
-.container {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  border: 1px solid #121212;
-  box-shadow: --var(gray-300) 0 0 0 1px;
-  background: --var(gray-50);
-  margin: 0 auto;
-  padding: 5%;
-  /* text-align: center; */
-  font-size: 1.5rem;
-}
-
 .form-control {
   width: 90%;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid --var(gray-300);
+  border: 1px solid var(--gray-300);
   border-radius: 4rem;
-  box-shadow: --var(gray-300) 0 0 0 1px;
-  background: --var(gray-50);
+  box-shadow: var(--gray-300) 0 0 0 1px;
+  background: var(--gray-50);
   font-size: 1.5rem;
-  color: --var(gray-300);
   outline: none;
   font-weight: 200;
 }
@@ -100,7 +89,7 @@ label {
 }
 
 .button {
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   cursor: pointer;
 }
 
@@ -116,4 +105,177 @@ label {
   outline: none;
   font-weight: 200;
   text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #f6f4f2;
+  height: 70px;
+  width: 100%;
+  box-shadow: 0rem 0.1rem 0.5rem 0 #1e1e1e;
+}
+.header-logo {
+  padding-bottom: 20px;
+  font-weight: bolder;
+  font-stretch: expanded;
+  font-style: italic;
+  outline: none;
+  text-decoration: none;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.bt {
+  padding: 5px;
+}
+
+.input {
+  width: 75%;
+  margin-right: 0;
+  padding:  10px;
+  border: none;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.add {
+  padding-right: 10px;
+}
+
+.box {
+  position: relative;
+  width: 95%;
+  max-width: 64rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 0.8rem 0 #c1ccc6;
+  background-color: white;
+}
+
+.box:hover {
+  box-shadow: -0.5rem 0.5rem 0.8rem 0 #1e1e1e; 
+}
+
+.disabledd {
+  cursor: pointer;
+}
+
+.btn-task {
+  position: sticky;
+    right: 1rem;
+    bottom: 0.5rem;
+    margin: 0.5rem;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    font-style: oblique;
+    background-color: #f57373;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none; 
+    cursor: pointer;
+}
+.btn-task:hover {
+  background-color: #b61111b4;
+}
+
+.form .input-task {
+  width: 70%;
+    font-size: 1.75rem;
+    border: none;
+    outline: none;
+}
+
+.edit-task {
+  position: relative;
+  width: 95%;
+  max-width: 64rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 0.8rem 0 #c1ccc6;
+  background-color: white;
+}
+
+.form {
+  position: relative;
+  width: 95%;
+  max-width: 50rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 0.1rem solid #cccccc;
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 0.8rem 0 #c1ccc6;
+  background-color: white;
+}
+
+.btn-edit {
+  background-color: white;
+  color: #1e1e1e;
+  border: none;
+  font-size: 1.5rem;
+  left: 16rem;
+  bottom: 1.5rem;
+  outline: none;
+  padding-left: 95%;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: white;
+  color: #1e1e1e;
+  border: none;
+  font-size: 1.5rem;
+  left: 16rem;
+  bottom: 1.5rem;
+  outline: none;
+  padding-right: 95%;
+  cursor: pointer;
+}
+
+.btn-deleteAll, .btnn {
+  position: sticky;
+  background-color: white;
+  color: blue;
+  border: none;
+  font-size: 2rem;
+  outline: none;
+  left: 16rem;
+  bottom: 1.5rem;
+}
+
+.task-completed {
+  top: 1rem;
+  right: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.cancel-done {
+  right: 1rem;
+    bottom: 0.5rem;
+    margin: 0.5rem;
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    font-style: oblique;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none; 
+  cursor: pointer;
+  color: white;
+  background-color: rgb(61, 116, 235);
+}
+
+.cancel {
+  background-color: rgb(233, 15, 26);
 }

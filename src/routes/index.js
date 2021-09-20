@@ -11,6 +11,7 @@ const PrivateRoute = lazy(() => import('./privateRoute'));
 const Login = lazy(() => import('../view/public/login'));
 const Register = lazy(() => import('../view/public/register'));
 const Dashboard = lazy(() => import('../view/private/dashboard'));
+const Edit = lazy(() => import('../view/private/edit-task'));
 
 const reloader = () => <p>loading</p>;
 
@@ -24,6 +25,7 @@ const App = () => {
             <PublicRoute path={ROUTES.LOGIN} component={Login} />
             <PublicRoute path={ROUTES.REGISTER} component={Register} />
             <PrivateRoute path={ROUTES.DASHBOARD} component={Dashboard} exact />
+            <PrivateRoute path={ROUTES.EDIT} component={Edit} exact />
           </Switch>
         </Suspense>
       </Router>

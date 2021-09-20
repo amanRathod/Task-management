@@ -2,10 +2,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import FormInputEmail from '../../component/input/email';
 import FormInputPassword from '../../component/input/password';
 import ValidateEmail from '../../utils/validation/email';
 import FirebaseContext from '../../utils/context/firebase';
+import notify from '../../component/public/notification';
 
 const Login = () => {
   const history = useHistory();
@@ -31,11 +34,19 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Login submit');
       await firebase.auth().signInWithEmailAndPassword(state.email, state.password);
-      history.push('/');
+      notify({
+        type: 'success',
+        message: 'Login successfully'
+      });
+      setTimeout(() => {
+        history.push('/');
+      }, 1000);
     } catch (err) {
-      console.log(err);
+      notify({
+        type: 'error',
+        message: err.message
+      });
     }
   };
   useEffect(() => {
@@ -44,7 +55,8 @@ const Login = () => {
 
   return (
     <div className="flex-row">
-      <div className="flex-column container">
+      <ToastContainer />
+      <div className="flex-column box">
         <form onSubmit={handleSubmit}>
           <div className="flex-column">
             <label htmlFor="email">Email</label>

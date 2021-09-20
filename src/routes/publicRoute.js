@@ -6,7 +6,7 @@ import UserContext from '../utils/context/user';
 import * as ROUTES from '../constants/routes';
 
 const PublicRoute = ({ component: Component, ...rest }) => {
-  const { user } = useContext(UserContext);
+  const user = useContext(UserContext);
   return (
     <Route
       {...rest}
